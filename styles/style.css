@@ -59,6 +59,7 @@ button {
     font-size: 1.5rem;
     max-width: 16rem;
     cursor: pointer;
+    transition: 0.2s opacity ease-in-out;
 }
 
 button:hover {
@@ -171,6 +172,11 @@ nav {
     font-weight: 700;
     font-size: var(--body-font-M);
     cursor: pointer;
+    transition: 0.2s opacity ease-in-out;
+}
+
+.course-grid-cell > a:hover {
+    opacity: 0.5;
 }
 
 .course-grid-cell:last-of-type {
