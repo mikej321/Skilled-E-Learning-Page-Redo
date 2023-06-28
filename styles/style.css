@@ -49,7 +49,12 @@ body {
     font-family: var(--jakarta);
 }
 
+nav > button {
+    cursor: pointer;
+}
+
 button {
+    position: relative;
     width: 140px;
     height: 48px;
     border: none;
@@ -61,6 +66,7 @@ button {
     max-width: 16rem;
     cursor: pointer;
     transition: 0.2s opacity ease-in-out;
+    z-index: 2;
 }
 
 button:hover {
@@ -313,6 +319,11 @@ footer > button {
 
     .first-section {
         padding-inline: 16.5rem;
+           
+    }
+
+    .left-section {
+        max-width: 40rem;
     }
 
     .course-grid {
