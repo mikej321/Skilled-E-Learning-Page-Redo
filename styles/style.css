@@ -50,9 +50,10 @@ body {
 }
 
 button {
-    padding: 1.2rem 2rem;
+    width: 140px;
+    height: 48px;
     border: none;
-    border-radius: 20px;
+    border-radius: 24px;
     font-weight: 700;
     background-color: var(--dark-blue);
     color: var(--white);
@@ -93,13 +94,19 @@ nav {
     gap: 2rem;
 }
 
-.first-section > h1 {
+.left-section {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.first-section > .left-section > h1 {
     font-size: var(--heading-L);
     font-weight: 800;
     color: var(--dark-blue);
 }
 
-.first-section > p:nth-child(2) {
+.first-section > .left-section > p:nth-child(2) {
     font-size: var(--body-font-SM);
     font-weight: 500;
     color: var(--gray-blue);
@@ -108,8 +115,9 @@ nav {
     margin-bottom: .5rem;
 }
 
-.first-section > button {
-    padding: 2rem 2.5rem;
+.first-section > .left-section > button {
+    width: 167px;
+    height: 56px;
     border-radius: 30px;
     background: var(--orange-gradient);
 }
@@ -119,21 +127,19 @@ nav {
 .course-grid {
     display: grid;
     gap: 4.5rem;
+    grid-template-areas: "header"
+                         "animation"
+                         "design"
+                         "photography"
+                         "crypto"
+                         "business";
 }
 
-.course-outline {
-    background: var(--orange-gradient);
-    padding: 3rem;
-    border-radius: 8px;
-    font-size: var(--heading-SM);
-    font-weight: 700;
-    color: var(--white);
-    
-}
 
 .course-grid-cell {
     position: relative;
-    padding-block: 3rem;
+    width: 340px;
+    height: 259px;
     background: var(--white);
     padding-inline: 2.5rem;
     display: flex;
@@ -142,6 +148,40 @@ nav {
     border-radius: 8px;
     box-shadow: 0px 25px 50px 0px rgba(6, 22, 141, 0.04);
     z-index: 1;
+}
+
+.course-outline {
+    background: var(--orange-gradient);
+    width: 343px;
+    height: 120px;
+    border-radius: 8px;
+    font-size: var(--heading-SM);
+    font-weight: 700;
+    color: var(--white);
+    grid-area: header;
+    display: flex;
+    align-items: center;
+    padding-inline: 2rem;    
+}
+
+.cell-1 {
+    grid-area: animation;
+}
+
+.cell-2 {
+    grid-area: design;
+}
+
+.cell-3 {
+    grid-area: photography;
+}
+
+.cell-4 {
+    grid-area: crypto;
+}
+
+.cell-5 {
+    grid-area: business;
 }
 
 .course-grid-cell > img {
@@ -157,7 +197,7 @@ nav {
     font-weight: 800;
     font-size: 20px;
     color: var(--dark-blue);
-    margin-top: 2rem;
+    margin-top: 6rem;
 }
 
 .course-grid-cell > p:last-of-type {
@@ -199,6 +239,94 @@ footer > button {
     width: 75px;
 }
 
+@media screen and (min-width: 600px) {
+
+    .main-container {
+        
+        max-width: 768px;
+    }
+
+    .first-section {
+        display: grid;
+        grid-template-areas: "summary picture";
+        grid-template-columns: 55% 45%;
+        margin-bottom: -15rem;
+        position: relative;
+        
+    }
+
+    .left-section {
+        grid-area: summary;
+        margin-top: 10rem;
+    }
+
+    .first-section > .left-section > p:nth-child(2) {
+        
+    }
+
+    .picture-container {
+        grid-area: picture;
+        width: 40rem;
+        
+    
+    }
+
+    picture > img {
+        position: relative;
+        bottom: 18rem;
+        right: 7rem;
+        max-width: 90rem;
+        
+    }
+
+    
+
+    .course-grid {
+        grid-template-columns: repeat(2, 50%);
+        grid-template-areas: "header animation"
+                             "design photography"
+                             "crypto business";
+        padding-right: 4rem;
+    }
+
+    .course-outline {
+        max-width: 339px;
+        height: 259px;
+    }
+
+    .course-grid-cell {
+        max-width: 339px;
+        height: 259px;
+    }
+}
+
+@media screen and (min-width: 1000px) {
+
+    .main-container {
+        max-width: 1440px;
+        grid-template-columns: 50% 50%;
+    }
+
+    nav {
+        padding-inline: 16.5rem;
+    }
+
+    .first-section {
+        padding-inline: 16.5rem;
+    }
+
+    .course-grid {
+        grid-template-columns: repeat(3, 33%);
+        grid-template-areas: "header animation design"
+                             "photography crypto business";
+        padding-inline: 16.5rem;
+    }
+
+    picture > img {
+        bottom: 25rem;
+        left: 5rem;
+    }
+}
 
 
 
